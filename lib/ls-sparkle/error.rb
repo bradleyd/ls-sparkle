@@ -1,0 +1,2 @@
+class CleaningError < StandardError
+end

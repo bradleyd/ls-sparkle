@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "ls-sparkle"
   gem.homepage = "http://github.com/bradleydsmith/ls-sparkle"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A direcotry maid service.}
+  gem.description = %Q{Clean up your orphaned files in your home and desktop directories.}
   gem.email = "bradleydsmith@gmail.com"
   gem.authors = ["Brad smith"]
   # dependencies defined in Gemfile

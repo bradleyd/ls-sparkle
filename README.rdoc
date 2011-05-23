@@ -1,6 +1,6 @@
 = ls-sparkle
 
-Description goes here.
+ls-sparkle is directory maid service which will clean up your orphaned files.  After lssparkle designates what type of files they are--via a yaml config file--it will then move these file to their respected directories.  This process should be cronned.
 
 == Contributing to ls-sparkle
  
@@ -14,6 +14,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Brad smith. See LICENSE.txt for
+Copyright (c) 2011 Brad Smith. See LICENSE.txt for
 further details.
 

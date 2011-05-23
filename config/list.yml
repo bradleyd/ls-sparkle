@@ -1,0 +1,44 @@
+basic:
+  path: /home/bradleyd
+
+filetypes:
+ archives:
+   zip: *.zip
+   tar: *.tar
+   gzip: *.gz
+   iso: *.iso
+
+ code:
+   c:      *.c
+   c++:    *.cpp
+   ruby:   *.rb
+   java:   *.java
+   perl:   *.perl
+   python: *.py
+ 
+ images:
+   png: *.png
+   jpeg: *.jpg
+   gif: *.gif
+
+ audio:
+   mp3: *.mp3
+   wav: *.wav
+
+ video:
+   avi: *.avi
+
+ documents:
+   pdf: *.pdf
+   doc: *.doc
+   xls: *.xls
+   txt: *.txt
+   rtf: *.rtf
+
+directories:
+  archives: Archives
+  code: Code
+  images: Pictures
+  audio: Music
+  videos: Videos 
+  documents: Documents
