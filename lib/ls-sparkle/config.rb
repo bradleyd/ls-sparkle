@@ -35,5 +35,5 @@ module Config
   end
 end
 
-a=Config::Options.new()
-p a.load_directories
+#a=Config::Options.new()
+#p a.load_directories
