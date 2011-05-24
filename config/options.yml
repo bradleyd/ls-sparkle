@@ -1,0 +1,59 @@
+##this is for the logging class
+log:
+ log_file: ls_sparkle.log
+ log_level: info
+ name: ls_sparkle
+
+##smtp options for logging
+smtp:
+  server: 10.130.103.25
+  port: 25
+  domain: fullspectrum.net
+  from_address: ls_sparkle@fullspectrum.net
+  to_address: brad.smith@fullspectrum.net
+
+##Directories under home directory
+directories:
+  archives: Archives
+  code: Code
+  images: Pictures
+  audio: Music
+  videos: Videos
+  documents: Documents
+  junk: JunkDrawer
+
+##file types 
+filetypes:
+ archives:
+   zip: *.zip
+   tar: *.tar
+   gzip: *.gz
+   iso: *.iso
+
+ code:
+   c:      *.c
+   c++:    *.cpp
+   ruby:   *.rb
+   java:   *.java
+   perl:   *.perl
+   python: *.py
+   bash:   *.sh
+ 
+ images:
+   png: *.png
+   jpeg: *.jpg
+   gif: *.gif
+
+ audio:
+   mp3: *.mp3
+   wav: *.wav
+
+ video:
+   avi: *.avi
+
+ documents:
+   pdf: *.pdf
+   doc: *.doc
+   xls: *.xls
+   txt: *.txt
+   rtf: *.rtf

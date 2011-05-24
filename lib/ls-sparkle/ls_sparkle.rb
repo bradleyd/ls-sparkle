@@ -1,6 +1,9 @@
 """This is where the artifacts get moved into their respected homes"""
 require File.dirname(__FILE__) + '/shelve_utils'
-
+#a=ShelveUtils.new
+#a.need_to_create_code?("dir")
+#a.check_shelves
+#a.pickup_the_mess
 
 module LsSparkle
   class Clean
@@ -9,7 +12,8 @@ module LsSparkle
     end
     
     def disinfect
-      p @fu.check_shelves
+      @fu.check_shelves
+      @fu.pickup_the_mess
     end
 
     def white_glove
@@ -21,4 +25,5 @@ module LsSparkle
   end
 end
 
-
+a=LsSparkle::Clean.new
+a.disinfect

@@ -1,19 +1,31 @@
+#the config file must have a nested entry or this will fail
+# foo:
+#   bar: hello world
+# you can also call load_"config file key" to get hash of values.
+# For example, Config::Options.new.load_log  will yield a hash from the config file.
+
 require'yaml'
 
 module Config
   class Options
-    attr_accessor :options, :config_file
+    attr_accessor :options, :config_file 
     def initialize(args={})
-      args.each { |key, value| send("#{key}=", value) if respond_to?(key) }
+      args.each { |key, value| send("#{key}=", value) if respond_to?(key) } unless args.empty?
       #XXX could send in config file path on instansiation of class
-      @file = File.dirname(__FILE__) + "/../../config/list.yml"
+      @file = File.dirname(__FILE__) + "/../../config/options.yml"
       @options = YAML.load_file(@file)
+      @options.each do |k,v|
+      self.class.class_eval do 
+        define_method k.to_sym do
+          self.instance_variable_set("@#{k}",v)
+        end
+      end
+      end
     end 
     
     def get_values
       @options = YAML.load_file(@file)
     end
-   
      #XXX needs refactoring
     def method_missing(method, *args, &block)
       if method.to_s.include?('_')
@@ -22,18 +34,11 @@ module Config
       else
         super
       end
-        
-      #case meth.to_s
-      #  when /^load_directories/
-      #    @options['directories'].values
-      #  when /^load_filetypes/
-      #    @options['filetypes']
-      #  else
-      #    super
-      # end
     end 
   end
 end
 
-#a=Config::Options.new()
-#p a.load_directories
+#a=Config::Options.new
+#p a.methods.sort
+#p a.smtp
+

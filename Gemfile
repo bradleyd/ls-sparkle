@@ -11,4 +11,5 @@ group :development do
   gem "jeweler", "~> 1.6.0"
   gem "rcov", ">= 0"
   gem "sinatra", ">=0"
+  gem "log4r"
 end
