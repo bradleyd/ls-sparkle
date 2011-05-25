@@ -1,6 +1,9 @@
 = ls_sparkle
 
-ls_sparkle is directory maid service which will clean up your orphaned files.  After ls_sparkle designates what type of files they are--via a yaml config file--it will then move these file to their respected directories.  To adjust what gets cleaned, go into config/optioins.yml and add or remove entries depending on taste. NOTE: there is a code section which has most of the popular formats.  This will create these sub-directories under a parent 'Code' directory for placement.  Please note, this will move files from their current location, either in your home directory or your desktop
+ls_sparkle is directory maid service which will clean up your orphaned files.  After ls_sparkle reads the config file , it decides what type of files to search for; ls_sparkle will then move these file to their respected directories.  To adjust what gets cleaned, go into config/optioins.yml and add or remove entries depending on taste. 
+NOTE: There is a code section which has most of the popular formats, one may need to edit this to suit their needs.
+These entries will create sub-directories under a parent 'Code' directory for placement.  
+Please remember, this will move files from their current location, either in your home directory or your desktop
 , to the newly created directories.  If you are using a Linux distro that has directories like: Videos, Music, etc..ls_sparkle will use these instead of creating new ones.
 
 
