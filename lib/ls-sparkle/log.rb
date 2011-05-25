@@ -1,5 +1,5 @@
-require File.dirname(__FILE__) + '/error'
-require File.dirname(__FILE__) + '/config'
+require 'ls-sparkle/error'
+require 'ls-sparkle/config'
 require 'rubygems'
 require 'log4r'
 require 'log4r/outputter/emailoutputter'

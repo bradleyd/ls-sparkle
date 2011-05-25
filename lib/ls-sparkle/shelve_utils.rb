@@ -1,6 +1,6 @@
-require File.dirname(__FILE__) + '/error'
-require File.dirname(__FILE__) + '/config'
-require File.dirname(__FILE__) + '/log'
+require 'ls-sparkle/error'
+require 'ls-sparkle/config'
+require 'ls-sparkle/log'
 require 'fileutils'
 
   #XXX needs a sanity check to make sure directories exist before 
@@ -96,34 +96,27 @@ require 'fileutils'
     def put_away(src, dest)
       begin
         temp=locate_directory(dest)
-        FileUtils.cp(src, temp, :verbose => false) if FileTest.directory? temp
+        FileUtils.mv(src, temp, :verbose => false) if FileTest.directory? temp
       rescue CleaningError => e
         puts "Error: #{e}"
         @log.write('error', "Connection ERROR: #{e}")
       end
     end
     #XXX Refactor: accept non nested entries in yaml config  
+    #XXX if the file is 'code', need to add code dir to end of build path
     def pickup_the_mess
        @config.load_filetypes.each do |key, value|
          value.each do |k,v|
-           Dir.glob("#{@home}/#{v}").each do |file|
-             #puts "FILE: #{file}.....MOVE: #{build_base_path(key)}"
-             #XXX if file is code, need to add code dir to end of build path
+           Dir.glob("#{@home}{,/Desktop}/#{v}").each do |file|
              if key == 'code'
                self.put_away file, "#{build_base_path(key)}/#{k}"
                @log.write('info', "Cleaned up file(s): #{file} to #{build_base_path(key)}/#{k}")
              else
                self.put_away file, build_base_path(key)
-               @log.write('info', "Cleaned up file(s): #{file} to #{build_base_path(key)}/#{k}")
+               @log.write('info', "Cleaned up file(s): #{file} to #{build_base_path(key)}")
              end
            end  
          end
        end
     end
 end
-
-
-#a=ShelveUtils.new
-#a.need_to_create_code?("dir")
-#a.check_shelves
-#a.pickup_the_mess

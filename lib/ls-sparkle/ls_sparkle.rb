@@ -1,9 +1,4 @@
-"""This is where the artifacts get moved into their respected homes"""
-require File.dirname(__FILE__) + '/shelve_utils'
-#a=ShelveUtils.new
-#a.need_to_create_code?("dir")
-#a.check_shelves
-#a.pickup_the_mess
+require 'ls-sparkle/shelve_utils'
 
 module LsSparkle
   class Clean
@@ -19,11 +14,14 @@ module LsSparkle
     def white_glove
 
     end
+    
+    def start
+      self.disinfect      
+    end
+
     def local_methods
       self.methods.sort - Object.methods
     end
   end
 end
 
-a=LsSparkle::Clean.new
-a.disinfect

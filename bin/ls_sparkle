@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+$:.unshift(File.dirname(__FILE__) + '/../lib') unless $:.include?(File.dirname(__FILE__) + '/../lib')
+
+require 'ls-sparkle/ls_sparkle'
+begin
+  LsSparkle::Clean.new.start
+rescue CleaningError => e
+  p e
+rescue Interrupt => e
+  p e
+  exit 1
+end
+
+

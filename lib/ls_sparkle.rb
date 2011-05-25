@@ -1,8 +1,5 @@
-require 'ls-sparkle/lssparkle'
-require 'ls-sparkle/shelve_utils'
-require 'ls-sparkle/config'
+require 'ls-sparkle/ls_sparkle'
 
-#a=Config::Options.new()
-#p a.load_directories
-a=LsSparkle::Clean.new
-a.disinfect
+module LsSparkle
+  Version = %W{ 0 0 1 }.join '.'
+end
