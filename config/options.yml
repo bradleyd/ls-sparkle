@@ -12,7 +12,9 @@ smtp:
   from_address: ls_sparkle@fullspectrum.net
   to_address: brad.smith@fullspectrum.net
 
-##Directories under home directory
+# Directories under home directory to be created or used.  
+# To create a new directory, create tag and then the actual directoy name
+# For example, foo: FooBar, then under filetypes add mapping back to the directory.
 directories:
   archives: Archives
   code: Code
@@ -22,7 +24,11 @@ directories:
   documents: Documents
   junk: JunkDrawer
 
-##file types 
+# file types.  The first entry is the mapping back to directories from above
+# The other entries are mapping to the regex that is passed to the shelve utils
+# For example, foo:
+#                bar: *.bar
+# This would tell ls_sparkle to move all file postfixed with *.bar to the bar diretory which is mapped above
 filetypes:
  archives:
    zip: *.zip
@@ -57,3 +63,6 @@ filetypes:
    xls: *.xls
    txt: *.txt
    rtf: *.rtf
+
+ junk:
+   junk: *.jnk

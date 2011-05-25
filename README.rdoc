@@ -1,16 +1,8 @@
-= ls-sparkle
+= ls_sparkle
 
-ls-sparkle is directory maid service which will clean up your orphaned files.  After lssparkle designates what type of files they are--via a yaml config file--it will then move these file to their respected directories.  This process should be cronned.
+ls_sparkle is directory maid service which will clean up your orphaned files.  After ls_sparkle designates what type of files they are--via a yaml config file--it will then move these file to their respected directories.  To adjust what gets cleaned, go into config/optioins.yml and add or remove entries depending on taste. NOTE: there is a code section which has most of the popular formats.  This will create these sub-directories under a parent 'Code' directory for placement.  Please note, this will move files from their current location, either in your home directory or your desktop
+, to the newly created directories.  If you are using a Linux distro that has directories like: Videos, Music, etc..ls_sparkle will use these instead of creating new ones.
 
-== Contributing to ls-sparkle
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 == Copyright
 
