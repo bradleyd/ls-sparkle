@@ -1,8 +1,12 @@
 #the config file must have a nested entry or this will fail
 # foo:
 #   bar: hello world
-# you can also call load_"config file key" to get hash of values.
-# For example, Config::Options.new.load_log  will yield a hash from the config file.
+# you can call load_"config file key" to get hash of values.
+# For example, Config::Options.new.load_log  will yield a hash from the config file with 'log' values .
+# Another way to retrieve the values is to chain methods.  FOr example,
+# a=Config::Options.new
+# a.log
+# will return the same results
 
 require'yaml'
 
